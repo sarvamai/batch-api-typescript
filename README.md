@@ -28,16 +28,6 @@ npm install axios fs winston @azure/storage-blob mime-types typescript @types/no
 npx tsc --init
 ```
 
-Then, open `tsconfig.json` and ensure the following settings are configured:
-```json
-{
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": "src"
-  }
-}
-```
 
 ### 4. **Create Required Directories**
 ```bash
