@@ -18,8 +18,8 @@ const logger = winston.createLogger({
     transports: [new winston.transports.Console()]
 });
 
-const API_SUBSCRIPTION_KEY = 'd75d7bf3-b053-4084-ac80-c37561a35bfc';
-const LANGUAGE_CODE = 'en-IN';
+const API_SUBSCRIPTION_KEY = 'YOUR_API_KEY';
+const LANGUAGE_CODE = 'hi-IN';
 
 class SarvamClient {
     private serviceClient: BlobServiceClient;
