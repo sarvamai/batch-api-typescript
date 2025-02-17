@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+*.log
+.DS_Store
+data/
+index.js
+tsconfig.tsbuildinfo
+package-lock.json
+package.json
+tsconfig.json
