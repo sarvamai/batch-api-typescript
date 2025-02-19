@@ -58,10 +58,15 @@ class SarvamClient {
     }
 
     async uploadFiles(localFilePaths: string[], overwrite: boolean = true): Promise<void> {
-        logger.info(`Starting upload of ${localFilePaths.length} files`);
-        const tasks = localFilePaths.map(path => this.uploadFile(path, path.split('/').pop()!, overwrite));
-        const results = await Promise.all(tasks);
-        logger.info(`Upload completed for ${results.filter(result => result).length} files`);
+        logger.info(`Starting concurrent upload of ${localFilePaths.length} files`);
+        // Create array of upload promises to execute concurrently
+        const uploadPromises = localFilePaths.map(path => 
+            this.uploadFile(path, path.split('/').pop()!, overwrite)
+        );
+        // Execute all uploads in parallel
+        const results = await Promise.all(uploadPromises);
+        const successCount = results.filter(result => result).length;
+        logger.info(`Concurrent upload completed: ${successCount}/${localFilePaths.length} files uploaded successfully`);
     }
 
     private async uploadFile(localFilePath: string, fileName: string, overwrite: boolean): Promise<boolean> {
