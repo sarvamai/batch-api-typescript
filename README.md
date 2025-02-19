@@ -14,7 +14,7 @@ This TypeScript script allows you to process multiple audio files using Sarvam A
 ### 1. **Clone and Install Dependencies**
 ```bash
 git clone <repository-url>
-cd sarvam-batch-typescript
+cd batch-api-typescript
 npm install
 ```
 
