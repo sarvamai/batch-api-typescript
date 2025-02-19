@@ -20,7 +20,7 @@ npm install
 
 ### 2. **Install Required Packages**
 ```bash
-npm install axios fs winston @azure/storage-blob mime-types typescript @types/node @types/mime-types @types/winston
+npm install axios fs winston @azure/storage-blob mime-types typescript @types/node @types/mime-types @types/winston @azure/storage-file-datalake
 ```
 
 ### 3. **Initialize TypeScript Configuration**
@@ -31,8 +31,9 @@ npx tsc --init
 
 ### 4. **Create Required Directories**
 ```bash
-mkdir data
 mkdir src
+cd src
+mkdir data
 ```
 The `data` directory stores the downloaded transcription results, and `src` is for TypeScript source files.
 
@@ -45,15 +46,14 @@ Create a new file named `index.ts` inside the `src` folder and paste your provid
 - Get your API key from [dashboard.sarvam.ai](https://dashboard.sarvam.ai)
 - Replace the `API_SUBSCRIPTION_KEY` value in `index.ts`:
 ```typescript
-const API_SUBSCRIPTION_KEY = 'your-api-key-here';
+const API_SUBSCRIPTION_KEY = 'API_SUBSCRIPTION_KEY';
 ```
 
 ### 2. **Audio Files**
 - Update the `localFiles` array in `main()` with your audio file paths:
 ```typescript
 const localFiles = [
-    '/path/to/your/first/audio.wav',
-    '/path/to/your/second/audio.wav'
+    '/Users/adityam/Repos/batch-api-typescript/medical_domain_test (1).wav',
 ];
 ```
 
